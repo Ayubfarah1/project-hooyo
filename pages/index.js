@@ -1,29 +1,46 @@
-import Navbar from '../components/Navbar';
 import { motion } from "framer-motion";
-
 
 export default function Home() {
   return (
-    <div className="bg-orange-50 overflow-hidden">
-      <Navbar />
+    <div className="overflow-hidden">
       <main className="flex flex-col items-center pt-24 px-4 pb-10">
-        {/* Logo */}
-        <img
+        {/* Animated Logo */}
+        <motion.img
           src="/logo.png"
           alt="Project Hooyo Logo"
           className="w-32 h-32 mb-4"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
         />
 
-        {/* Title */}
-        <h1 className="text-5xl font-extrabold text-orange-700">
+        {/* Animated Title */}
+        <motion.h1
+          className="text-5xl font-extrabold text-orange-700 text-center"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+        >
           Project Hooyo
-        </h1>
-        <p className="mt-2 text-lg text-brown-500 italic">
-          Rising for Others — The Hooyo Way
-        </p>
+        </motion.h1>
 
-        {/* Mission Statement */}
-        <section className="mt-8 max-w-3xl text-brown-700 text-sm leading-relaxed space-y-4 px-4 indent">
+        {/* Animated Tagline */}
+        <motion.p
+          className="mt-2 text-lg text-brown-500 italic text-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+        >
+          Rising for Others — The Hooyo Way
+        </motion.p>
+
+        {/* Animated Mission Statement */}
+        <motion.section
+          className="mt-8 max-w-3xl text-brown-700 text-sm leading-relaxed space-y-4 px-4 indent"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.7, duration: 0.8 }}
+        >
           <p>
             Project Hooyo was founded by daughters raised by single mothers and
             women who carried entire households with faith, strength, and
@@ -53,17 +70,17 @@ export default function Home() {
             mothers. With Allah’s permission, we will create a space for women
             to heal, rest, and rise.
           </p>
-        </section>
+        </motion.section>
 
-        {/* Quick Links */}
+        {/* Animated Quick Links */}
         <motion.div
-          className="mt-10 mb-16 flex flex-wrap justify-center gap-4" 
+          className="mt-10 mb-16 flex flex-wrap justify-center gap-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
+          transition={{ delay: 1, duration: 0.6 }}
         >
           <a
-            href="/about"
+            href="/about-us"
             className="bg-orange-600 text-white px-6 py-3 rounded shadow hover:bg-orange-700 transition"
           >
             About Us
